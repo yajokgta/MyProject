@@ -12,7 +12,7 @@ export async function CallAPIPost(request: FetchData) {
 
     if (request.headers) {
         request.headers.forEach((x) => {
-            headers.append(x[0],x[1]);
+            headers.append(x[0], x[1]);
         });
     }
 
@@ -36,7 +36,7 @@ export async function CallAPIGet(request: FetchData) {
 
     if (request.headers) {
         request.headers.forEach((x) => {
-            headers.append(x[0],x[1]);
+            headers.append(x[0], x[1]);
         });
     }
 
