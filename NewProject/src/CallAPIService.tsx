@@ -6,11 +6,18 @@ export interface FetchData {
     headers: [string, string][];
 }
 
+export async function MockLogin(){
+    const dataResult = {
+        Token:'FWADJIFHJAWOPDJPWOA'
+    }
+    return dataResult;
+} 
+
 export async function CallAPIPost(request: FetchData) {
     const headers = new Headers();
     headers.set("Content-Type", "application/json");
 
-    if (request.headers) {
+    if (request.headers.length != 0) {
         request.headers.forEach((x) => {
             headers.append(x[0], x[1]);
         });
@@ -34,7 +41,7 @@ export async function CallAPIGet(request: FetchData) {
     const headers = new Headers();
     headers.set("Content-Type", "application/json");
 
-    if (request.headers) {
+    if (request.headers.length != 0) {
         request.headers.forEach((x) => {
             headers.append(x[0], x[1]);
         });
