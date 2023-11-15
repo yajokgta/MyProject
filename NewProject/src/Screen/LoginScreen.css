@@ -1,0 +1,27 @@
+.mainDiv {
+    min-height: 100vh;
+    min-width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-Defalt {
+    width: "200px";
+    float: "right";
+    margin-left: "3px";
+}
+
+.button-Defalt {
+    width: "200px";
+    float: "right";
+    margin-left: "3px";
+}
+
+.button-login {
+    margin: 5px;
+    width: "200px";
+    float: "right";
+    margin-left: "3px";
+    background-color: lawngreen;
+}

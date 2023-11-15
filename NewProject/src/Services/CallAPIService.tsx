@@ -1,4 +1,4 @@
-import configuration from '../config.json'
+import configuration from '../../config.json'
 
 export interface FetchData {
     uri: string;
