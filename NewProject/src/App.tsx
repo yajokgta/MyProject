@@ -21,8 +21,14 @@ function App() {
     };
 
     let result = await CallAPIPost(data);
-    localStorage.setItem('token',result.token);
-    console.log(result)
+    localStorage.setItem('token',result.e_DATA.token);
+
+    if(localStorage.getItem('token')){
+      console.log('Login Success');
+    }
+    else{
+      console.log('Login Fail')
+    }
   }
 
   const handleUsername = (x: any) => {
