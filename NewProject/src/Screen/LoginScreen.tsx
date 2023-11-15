@@ -4,19 +4,13 @@ import { Button } from 'antd';
 import { CallAPIPost, FetchData } from '../Services/CallAPIService';
 import './LoginScreen.css'
 import Card from 'antd/es/card/Card';
-
-function ValidateToken() {
-    if (localStorage.getItem("token")) {
-        history.pushState(null, "0", "/Default")
-        history.go();
-    }
-}
+import { ValidateTokenLoginScreen } from '../Services/Validate';
 
 function LoginScreen() {
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
 
-    ValidateToken();
+    ValidateTokenLoginScreen();
 
     async function login() {
         let data: FetchData =
@@ -31,7 +25,7 @@ function LoginScreen() {
 
         let result = await CallAPIPost(data);
         localStorage.setItem('token', result.e_DATA.token);
-        ValidateToken();
+        ValidateTokenLoginScreen();
     }
 
     const handleUsername = (x: any) => {
