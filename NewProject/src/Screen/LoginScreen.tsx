@@ -5,6 +5,7 @@ import { CallAPIPost, FetchData } from '../Services/CallAPIService';
 import './LoginScreen.css'
 import Card from 'antd/es/card/Card';
 import { ValidateTokenLoginScreen } from '../Services/Validate';
+import { UserData } from '../Models/UserData';
 
 function LoginScreen() {
     const [Username, setUsername] = useState('');
@@ -25,6 +26,16 @@ function LoginScreen() {
 
         let result = await CallAPIPost(data);
         localStorage.setItem('token', result.e_DATA.token);
+
+        /*let dataMockUp:any = {
+            Username: "yajokz",
+            Password: "1234", 
+            Email: "xx@xx.com",
+            Name: ''
+        }*/
+
+        localStorage.setItem('userData', JSON.stringify(result.e_DATA.userData));
+
         ValidateTokenLoginScreen();
     }
 

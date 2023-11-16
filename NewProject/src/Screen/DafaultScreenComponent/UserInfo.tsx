@@ -1,12 +1,32 @@
-import { UserOutlined } from "@ant-design/icons";
-import { Card } from "antd";
+import { ContactsFilled, InfoCircleFilled, InfoOutlined, UserOutlined } from "@ant-design/icons";
+import { Card, TimePicker } from "antd";
+import { _userData } from "../../Services/userData";
+import { useState } from "react";
 
+export default function UserInfo() {
+    let time = new Date().toLocaleTimeString();
+    const [timer, setTimer] = useState(time);
 
-export default function UserInfo(Props: any) {
+    const UpdateRealTime = ()=>{
+        time = new Date().toLocaleTimeString();
+        setTimer(time);
+    }
 
+    setInterval(UpdateRealTime, 1000);
     return (
-        <Card style={{ margin: "10px" }}>
-            <UserOutlined />
-        </Card>
+        <div className="userinfo">
+            <div>
+                <UserOutlined />
+                <span> : {_userData?.username}</span>
+            </div>
+            <div>
+                <InfoCircleFilled />
+                <span> : {_userData?.email}</span>
+            </div>
+            <div>
+                <ContactsFilled />
+                <span> : {timer}</span>
+            </div>
+        </div>
     );
 }

@@ -1,11 +1,11 @@
-import { Menu, Breadcrumb } from "antd";
 import Layout, { Header } from "antd/es/layout/layout";
-import { ValidateToken } from "../Services/Validate";
+import {ValidateToken} from "../Services/Validate";
 import HeaderComp from "./DafaultScreenComponent/HeaderComp";
 import SiderComp from "./DafaultScreenComponent/SiderComp";
 import ContentComp from "./DafaultScreenComponent/ContentComp";
 import FooterComp from "./DafaultScreenComponent/FooterComp";
-import './DefaltScreen.css'
+import './DefaltScreen.css';
+import { _userData } from "../Services/userData";
 
 export default function DefaultScreen() {
     ValidateToken();

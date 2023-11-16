@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
-
 export function ValidateToken() {
+    const navigate = useNavigate();
     if (!localStorage.getItem("token")) {
         navigate("/Login");
     }
 }
 
 export function ValidateTokenLoginScreen() {
+    const navigate = useNavigate();
     if (localStorage.getItem("token")) {
-        navigate("/Default");
+        navigate("/Default", {replace:true});
     }
 }
