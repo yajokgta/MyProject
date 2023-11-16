@@ -1,27 +1,22 @@
 import { Menu, Breadcrumb } from "antd";
 import Layout, { Header } from "antd/es/layout/layout";
 import { ValidateToken } from "../Services/Validate";
+import HeaderComp from "./DafaultScreenComponent/HeaderComp";
+import SiderComp from "./DafaultScreenComponent/SiderComp";
+import ContentComp from "./DafaultScreenComponent/ContentComp";
+import FooterComp from "./DafaultScreenComponent/FooterComp";
+import './DefaltScreen.css'
 
 export default function DefaultScreen() {
     ValidateToken();
-
     return (
-        <Layout className="layout">
-            <Header style={{ display: "flex", alignItems: "center" }}>
-                <div className="demo-logo" />
-                <Menu
-                    theme="dark"
-                    mode="horizontal"
-                    defaultSelectedKeys={["2"]}
-                    items={new Array(3).fill(null).map((_, index) => {
-                        const key = index + 1;
-                        return {
-                            key,
-                            label: `ควย ${key}`
-                        };
-                    })}
-                />
-            </Header>
+        <Layout className="defaultlayout">
+            <SiderComp />
+            <Layout className="layout" style={{ position: "relative" }}>
+                <HeaderComp />
+                <ContentComp />
+                <FooterComp />
+            </Layout>
         </Layout>
     )
 }
