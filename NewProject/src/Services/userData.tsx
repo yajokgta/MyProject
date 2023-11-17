@@ -1,6 +1,8 @@
-export let _userData = JSON.parse(localStorage?.getItem("userData") || "null");
+import { UserData } from "../Models/UserData";
 
-export const setUserData = (userdata:any)=>{
+export let _userData:UserData = JSON.parse(localStorage?.getItem("userData") || "null");
+
+export const setUserData = (userdata:UserData)=>{
     localStorage.setItem('userData', JSON.stringify(userdata));
     _userData = userdata;
     return userdata;

@@ -1,6 +1,7 @@
 export type UserData = {
-    Username:string;
-    Password:string;
-    Email:string;
-    Name:string;
+    username:string;
+    password:string;
+    email:string;
+    name:string;
+    phonenumber:string;
 }

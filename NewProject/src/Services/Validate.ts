@@ -8,8 +8,7 @@ export function ValidateToken() {
 }
 
 export function ValidateTokenLoginScreen() {
-    const navigate = useNavigate();
     if (localStorage.getItem("token")) {
-        navigate("/Default", {replace:true});
+        return true;
     }
 }

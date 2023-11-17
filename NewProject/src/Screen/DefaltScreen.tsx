@@ -1,5 +1,4 @@
-import Layout, { Header } from "antd/es/layout/layout";
-import {ValidateToken} from "../Services/Validate";
+import Layout from "antd/es/layout/layout";
 import HeaderComp from "./DafaultScreenComponent/HeaderComp";
 import SiderComp from "./DafaultScreenComponent/SiderComp";
 import ContentComp from "./DafaultScreenComponent/ContentComp";
@@ -8,7 +7,6 @@ import './DefaltScreen.css';
 import { _userData } from "../Services/userData";
 
 export default function DefaultScreen() {
-    ValidateToken();
     return (
         <Layout className="defaultlayout">
             <SiderComp />

@@ -1,5 +1,4 @@
-import { ContactsFilled, InfoCircleFilled, InfoOutlined, UserOutlined } from "@ant-design/icons";
-import { Card, TimePicker } from "antd";
+import { ContactsFilled, InfoCircleFilled, UserOutlined } from "@ant-design/icons";
 import { _userData } from "../../Services/userData";
 import { useState } from "react";
 
@@ -21,7 +20,7 @@ export default function UserInfo() {
             </div>
             <div>
                 <InfoCircleFilled />
-                <span> : {_userData?.email}</span>
+                <span> : {_userData?.name}</span>
             </div>
             <div>
                 <ContactsFilled />

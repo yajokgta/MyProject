@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Input } from 'antd';
 import { Button } from 'antd';
 import { CallAPIPost, FetchData } from '../Services/CallAPIService';
 import './LoginScreen.css'
 import Card from 'antd/es/card/Card';
 import { ValidateTokenLoginScreen } from '../Services/Validate';
-import { UserData } from '../Models/UserData';
+import { useNavigate } from 'react-router-dom';
 
 function LoginScreen() {
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    ValidateTokenLoginScreen();
+    useEffect(() => {
+        if (ValidateTokenLoginScreen()) {
+            navigate("/Default");
+        }
+    }, [])
 
     async function login() {
         let data: FetchData =
@@ -27,16 +32,10 @@ function LoginScreen() {
         let result = await CallAPIPost(data);
         localStorage.setItem('token', result.e_DATA.token);
 
-        /*let dataMockUp:any = {
-            Username: "yajokz",
-            Password: "1234", 
-            Email: "xx@xx.com",
-            Name: ''
-        }*/
-
         localStorage.setItem('userData', JSON.stringify(result.e_DATA.userData));
-
-        ValidateTokenLoginScreen();
+        if (ValidateTokenLoginScreen()) {
+            navigate("/Default");
+        }
     }
 
     const handleUsername = (x: any) => {
