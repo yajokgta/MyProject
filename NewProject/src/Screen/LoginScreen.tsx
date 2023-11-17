@@ -6,6 +6,7 @@ import './LoginScreen.css'
 import Card from 'antd/es/card/Card';
 import { ValidateTokenLoginScreen } from '../Services/Validate';
 import { useNavigate } from 'react-router-dom';
+import { setUserData } from '../Services/userData';
 
 function LoginScreen() {
     const [Username, setUsername] = useState('');
@@ -31,8 +32,9 @@ function LoginScreen() {
 
         let result = await CallAPIPost(data);
         localStorage.setItem('token', result.e_DATA.token);
-
         localStorage.setItem('userData', JSON.stringify(result.e_DATA.userData));
+        setUserData(result.e_DATA.userData);
+
         if (ValidateTokenLoginScreen()) {
             navigate("/Default");
         }
