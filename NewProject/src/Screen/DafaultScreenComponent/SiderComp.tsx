@@ -1,6 +1,6 @@
 import Sider from "antd/es/layout/Sider";
 import UserInfo from "./UserInfo";
-import '../DefaltScreen.css'
+import './DefaltScreen.css'
 
 export default function SiderComp(Props:any) {
     return (

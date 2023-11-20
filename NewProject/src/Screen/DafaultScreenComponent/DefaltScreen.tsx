@@ -1,11 +1,11 @@
 import Layout from "antd/es/layout/layout";
-import HeaderComp from "./DafaultScreenComponent/HeaderComp";
-import SiderComp from "./DafaultScreenComponent/SiderComp";
-import ContentComp from "./DafaultScreenComponent/ContentComp";
-import FooterComp from "./DafaultScreenComponent/FooterComp";
+import HeaderComp from "./HeaderComp";
+import SiderComp from "./SiderComp";
+import ContentComp from "./ContentComp";
+import FooterComp from "./FooterComp";
 import './DefaltScreen.css';
-import { _userData } from "../Services/userData";
-import { ValidateToken } from "../Services/Validate";
+import { _userData } from "../../Services/userData";
+import { ValidateToken } from "../../Services/Validate";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 

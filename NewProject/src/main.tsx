@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import LoginScreen from './Screen/LoginScreen.tsx'
-import DefaltScreen from './Screen/DefaltScreen.tsx'
+import DefaltScreen from './Screen/DafaultScreenComponent/DefaltScreen.tsx'
 import './index.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
