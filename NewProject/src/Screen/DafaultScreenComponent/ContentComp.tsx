@@ -9,6 +9,9 @@ interface Oder {
 }
 
 export default function ContentComp() {
+
+
+    
     function oderBlock(oder: Oder) {
         return (
             <Col span={6}>

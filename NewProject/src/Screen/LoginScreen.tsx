@@ -13,7 +13,8 @@ function LoginScreen() {
     const [Password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    useEffect(() => {
+    useEffect(() => 
+    {
         if (ValidateTokenLoginScreen()) {
             navigate("/Default");
         }

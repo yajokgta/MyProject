@@ -18,12 +18,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 )
 
 export function CheckLogin() {
-  if (!localStorage.getItem("token")) {
+  if (!localStorage.getItem("token")) 
+  {
     return (
       <LoginScreen />
     );
   }
-  else {
+  
+  else 
+  {
     return (
       <DefaltScreen />
     )
